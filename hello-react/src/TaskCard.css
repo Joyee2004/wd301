@@ -1,0 +1,46 @@
+
+.TaskItem {
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.TaskItem .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+
+.TaskItem .status {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+
+.TaskItem .assignee {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+
+.TaskItem.pending {
+  border-left: 5px solid #ffca28;
+}
+
+
+.TaskItem.completed {
+  border-left: 5px solid #4caf50;
+}
+
+
+.TaskItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
