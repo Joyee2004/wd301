@@ -9,14 +9,4 @@
 .read-the-docs {
   color: #888;
 }
-.task-grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 32px;
-}
 
-.task-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}

@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import TaskCard from './TaskCard';
-import './App.css';  
 
-function App() {
-  const [tasks, setTasks] = useState([
+
+interface Task {
+  title: string;
+  dueDate?: string;
+  completedAtTime?: string;
+  assigneeName: string;
+  card: string;
+}
+
+const App: React.FC = () => {
+  const [tasks, setTasks] = useState<Task[]>([
     {
       title: 'Build the website with static content',
       dueDate: '10/04/24',
@@ -31,7 +39,7 @@ function App() {
   ]);
 
   const addNewTask = () => {
-    const newTask = {
+    const newTask: Task = {
       title: 'New Task Title',
       dueDate: 'TBD',
       assigneeName: 'New Assignee',
@@ -41,14 +49,14 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <h1 className="title">Smarter Tasks</h1>
-      <h2 className="subtitle">Project: Graduation Final Year Project</h2>
+    <div className="max-w-screen-lg mx-auto p-8">
+      <h1 className="text-3xl font-bold text-center mb-8">Smarter Tasks</h1>
+      <h2 className="text-xl font-semibold text-center mb-6">Project: Graduation Final Year Project</h2>
 
-      <div className="task-grid">
+      <div className="grid grid-cols-2 gap-8">
         <div>
-          <h2 className="section-title">Pending</h2>
-          <div className="task-list">
+          <h2 className="text-2xl font-semibold mb-4">Pending</h2>
+          <div className="space-y-4">
             {tasks
               .filter((task) => task.card === 'pending')
               .map((task, index) => (
@@ -61,8 +69,8 @@ function App() {
                 />
               ))}
           </div>
-          <button 
-            className="add-task-button"
+          <button
+            className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition"
             onClick={addNewTask}
           >
             + New Task
@@ -70,8 +78,8 @@ function App() {
         </div>
 
         <div>
-          <h2 className="section-title">Done</h2>
-          <div className="task-list">
+          <h2 className="text-2xl font-semibold mb-4">Done</h2>
+          <div className="space-y-4">
             {tasks
               .filter((task) => task.card === 'done')
               .map((task, index) => (
@@ -88,6 +96,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
