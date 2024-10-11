@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TaskCard from './TaskCard';
+import './App.css';  
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -40,15 +41,14 @@ function App() {
   };
 
   return (
-    <div className="max-w-screen-lg mx-auto p-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Smarter Tasks</h1>
-      <h2 className="text-xl font-semibold text-center mb-6">Project: Graduation Final Year Project</h2>
+    <div className="container">
+      <h1 className="title">Smarter Tasks</h1>
+      <h2 className="subtitle">Project: Graduation Final Year Project</h2>
 
-      <div className="grid grid-cols-2 gap-8">
-    
+      <div className="task-grid">
         <div>
-          <h2 className="text-2xl font-semibold mb-4">Pending</h2>
-          <div className="space-y-4">
+          <h2 className="section-title">Pending</h2>
+          <div className="task-list">
             {tasks
               .filter((task) => task.card === 'pending')
               .map((task, index) => (
@@ -62,17 +62,16 @@ function App() {
               ))}
           </div>
           <button 
-            className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition"
+            className="add-task-button"
             onClick={addNewTask}
           >
             + New Task
           </button>
         </div>
 
-       
         <div>
-          <h2 className="text-2xl font-semibold mb-4">Done</h2>
-          <div className="space-y-4">
+          <h2 className="section-title">Done</h2>
+          <div className="task-list">
             {tasks
               .filter((task) => task.card === 'done')
               .map((task, index) => (
