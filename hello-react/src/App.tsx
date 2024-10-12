@@ -5,7 +5,7 @@ import TaskCard from './TaskCard';
 interface Task {
   title: string;
   dueDate?: Date;
-  completedAtTime?: Date;
+  completedAtDate?: Date;
   assigneeName: string;
   card: string;
 }
@@ -26,13 +26,13 @@ const App: React.FC = () => {
     },
     {
       title: 'Design the mockup',
-      completedAtTime: new Date("2024-03-03"),
+      completedAtDate: new Date("2024-03-03"),
       assigneeName: 'Joyee',
       card: 'done',
     },
     {
       title: 'Get the approval from principal',
-      completedAtTime: new Date("2024-03-03"),
+      completedAtDate: new Date("2024-03-03"),
       assigneeName: 'Joyee',
       card: 'done',
     },
@@ -87,7 +87,7 @@ const App: React.FC = () => {
                   key={index}
                   card={task.card}
                   title={task.title}
-                  completedAtTime={task.completedAtTime}
+                  completedAtDate={task.completedAtDate}
                   assigneeName={task.assigneeName}
                 />
               ))}
