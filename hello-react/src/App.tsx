@@ -4,8 +4,8 @@ import TaskCard from './TaskCard';
 
 interface Task {
   title: string;
-  dueDate?: string;
-  completedAtTime?: string;
+  dueDate?: Date;
+  completedAtTime?: Date;
   assigneeName: string;
   card: string;
 }
@@ -14,25 +14,25 @@ const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([
     {
       title: 'Build the website with static content',
-      dueDate: '10/04/24',
+      dueDate: new Date("2024-03-03"),
       assigneeName: 'Joyee',
       card: 'pending',
     },
     {
       title: 'Add a blog',
-      dueDate: '22/03/24',
+      dueDate: new Date("2024-03-03"),
       assigneeName: 'Joyee',
       card: 'pending',
     },
     {
       title: 'Design the mockup',
-      completedAtTime: '10/04/24',
+      completedAtTime: new Date("2024-03-03"),
       assigneeName: 'Joyee',
       card: 'done',
     },
     {
       title: 'Get the approval from principal',
-      completedAtTime: '20/04/24',
+      completedAtTime: new Date("2024-03-03"),
       assigneeName: 'Joyee',
       card: 'done',
     },
@@ -41,7 +41,7 @@ const App: React.FC = () => {
   const addNewTask = () => {
     const newTask: Task = {
       title: 'New Task Title',
-      dueDate: 'TBD',
+      dueDate:new Date(""),
       assigneeName: 'New Assignee',
       card: 'pending',
     };
