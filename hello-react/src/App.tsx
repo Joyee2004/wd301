@@ -7,7 +7,7 @@ interface Task {
   dueDate?: Date;
   completedAtDate?: Date;
   assigneeName: string;
-  card: string;
+  card: 'pending' | 'done';
 }
 
 const App: React.FC = () => {

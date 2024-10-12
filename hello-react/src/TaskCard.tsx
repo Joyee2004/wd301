@@ -2,7 +2,7 @@ import React from 'react';
 import './TaskCard.css';
 
 interface TaskCardProps {
-  card: string;
+  card: 'pending' | 'done';
   title: string;
   dueDate?: Date;
   completedAtDate?: Date;
@@ -14,7 +14,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ card, title, dueDate, completedAtDa
     <div className={`TaskItem ${card === 'pending' ? 'pending' : 'completed'}`}>
       <h3 className="title">{title}</h3>
      
-      {completedAtDate && <p className="status">Completed: {completedAtDate.toLocaleDateString("en-CA")}</p>}
+      {completedAtDate && <p className="status">Completed on: {completedAtDate.toLocaleDateString("en-CA")}</p>}
       {!completedAtDate && dueDate && (
         <p>Due on: {dueDate.toLocaleDateString("en-CA")}</p>
       )}
